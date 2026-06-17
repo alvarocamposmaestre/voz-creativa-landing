@@ -1,0 +1,19 @@
+# Secrets
+.env
+.env.*
+*.local
+
+# Temporary and local database files
+.tmp/
+node_modules/
+dist/
+build/
+.agent/scratch/
+.agent/memory.json
+.agent/*.db
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

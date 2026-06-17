@@ -1,0 +1,19 @@
+{
+    "current_feature":  "landing_page_creation",
+    "current_phase":  "Trigger",
+    "phase_dag":  [
+                      "Blueprint",
+                      "Link",
+                      "Architect",
+                      "Stylize",
+                      "Trigger"
+                  ],
+    "checkpoints_verified":  [
+                                 "Blueprint",
+                                 "Link",
+                                 "Architect",
+                                 "Stylize",
+                                 "Trigger"
+                             ],
+    "locked":  true
+}

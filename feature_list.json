@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "landing_page_creation",
+    "description": "Crear y diseñar la landing page en HTML/CSS/JS con estética premium para Voz Creativa - Raquel Cartaya e integrarla en WordPress",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
+  }
+]
