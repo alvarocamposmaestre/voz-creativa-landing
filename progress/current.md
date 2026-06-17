@@ -16,6 +16,7 @@
   - [x] Modificar orden del grid en el Hero para que el logotipo de la marca cargue primero en pantallas pequeñas.
   - [x] Prevenir desborde lateral (`overflow`) de las 3 tarjetas de acompañamiento personalizado aplicando `min-width: 0` y disminuyendo paddings.
   - [x] Corregir el desborde del formulario en móviles reduciendo padding y asegurando el ancho (`width: 100%`) de los campos de entrada.
+  - [x] Forzar la visualización vertical de las tres tarjetas del split grid en móviles/tabletas (992px) y anular el grid-column span en la tercera tarjeta para evitar desalineación lateral.
 
 ## 🔍 Findings & Obstacles
 - En dispositivos móviles, la pista de los marquees infinitos dentro de las tarjetas flex forzaba un ancho mínimo (`min-content` basado en la longitud de la animación), solucionado agregando `min-width: 0` a los contenedores y ajustando el comportamiento de las cajas.

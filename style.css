@@ -1932,9 +1932,14 @@ h1, h2, h3, h4 {
     .diff-container,
     .syllabus-layout-grid,
     .outcomes-container,
-    .signup-grid-container {
+    .signup-grid-container,
+    .split-grid-details {
         grid-template-columns: 1fr;
         gap: 48px;
+    }
+
+    .span-two-cols {
+        grid-column: auto;
     }
     
     .diff-left {
@@ -1974,10 +1979,6 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
-    .split-grid-details {
-        grid-template-columns: 1fr;
-    }
-
     .detail-split-card {
         padding: 24px 20px;
     }
