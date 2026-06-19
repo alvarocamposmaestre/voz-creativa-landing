@@ -1,5 +1,5 @@
 {
-    "current_feature": "landing_page_copy_updates",
+    "current_feature": "copy_and_layout_polishing",
     "current_phase": "Trigger",
     "phase_dag": [
         "Blueprint",
@@ -14,5 +14,5 @@
         "Tests-Verified",
         "Trigger"
     ],
-    "locked": true
+    "locked": false
 }

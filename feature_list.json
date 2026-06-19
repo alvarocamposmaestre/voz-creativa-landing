@@ -14,5 +14,21 @@
     "status": "done",
     "sdd": true,
     "priority": "high"
+  },
+  {
+    "id": 3,
+    "name": "outcomes_mobile_layout",
+    "description": "Corregir el orden de visualización de la sección Outcomes en móvil y añadir botón Conocer más en la descripción de Raquel Cartaya",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
+  },
+  {
+    "id": 4,
+    "name": "copy_and_layout_polishing",
+    "description": "Polishing of text copy, bolding, names splitting, pricing text styling and layout adjustments on the landing page",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
   }
 ]
