@@ -1,19 +1,18 @@
 {
-    "current_feature":  "landing_page_creation",
-    "current_phase":  "Trigger",
-    "phase_dag":  [
-                      "Blueprint",
-                      "Link",
-                      "Architect",
-                      "Stylize",
-                      "Trigger"
-                  ],
-    "checkpoints_verified":  [
-                                 "Blueprint",
-                                 "Link",
-                                 "Architect",
-                                 "Stylize",
-                                 "Trigger"
-                             ],
-    "locked":  true
+    "current_feature": "landing_page_copy_updates",
+    "current_phase": "Trigger",
+    "phase_dag": [
+        "Blueprint",
+        "Link",
+        "Architect",
+        "Stylize",
+        "Trigger"
+    ],
+    "checkpoints_verified": [
+        "Specs-Created",
+        "Environment-Configured",
+        "Tests-Verified",
+        "Trigger"
+    ],
+    "locked": true
 }

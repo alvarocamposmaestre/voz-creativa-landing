@@ -39,4 +39,4 @@ Cada habilidad documentada debe seguir este formato:
   - **Prompt Safety:** When introducing new skills or user prompts, validate them against prompt injection using a Defense-in-Depth approach (e.g., Prompt Guard with strict thresholds: <0.5 for direct inputs, <0.3 for RAG/API responses).
 
 ## 4. Maintenance Log
-*(To be populated in Phase 5)*
+- **2026-06-19**: Actualización completa de copys de la landing page, perfiles de los ponentes invitados y precios mensuales diferenciados (96 € con IVA 🇪🇸 / 80 € fuera de España 🌎 en naranja #FF7432). Integración del campo de WhatsApp en el formulario, validación de datos y vinculación de Webhook. Implementación de los colores secundarios de la marca (Naranja #FF7432 y Púrpura #7C45C4) en las secciones "Lo que encontrarás dentro" y "Encuentros con expertos", respectivamente, y en los estados hover de los botones. Modificaciones a la Política de Privacidad para declarar a Raquel Cartaya como responsable única.

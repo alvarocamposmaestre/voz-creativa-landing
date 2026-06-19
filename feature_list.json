@@ -6,5 +6,13 @@
     "status": "done",
     "sdd": true,
     "priority": "high"
+  },
+  {
+    "id": 2,
+    "name": "landing_page_copy_updates",
+    "description": "Actualizar copys de apartados, precios, expertos invitados, campos del formulario (WhatsApp) y políticas de privacidad en la landing page",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
   }
 ]

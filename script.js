@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const geoCountryVisibleInput = document.getElementById('geo-country-visible');
     const geoIpInput = document.getElementById('geo-ip');
 
+    function selectWhatsAppCode(countryName) {
+        const select = document.getElementById('user-whatsapp-code');
+        if (!select) return;
+        const cleanCountry = countryName.toLowerCase().trim();
+        for (let i = 0; i < select.options.length; i++) {
+            const optionCountry = select.options[i].getAttribute('data-country') || '';
+            if (cleanCountry.includes(optionCountry.toLowerCase()) || optionCountry.toLowerCase().includes(cleanCountry)) {
+                select.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
     async function fetchUserLocation() {
         const apis = [
             'https://freeipapi.com/api/json',
@@ -89,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (geoCountryInput) geoCountryInput.value = `${country} (${code || ''})`;
                     if (geoCountryVisibleInput) geoCountryVisibleInput.value = country;
                     if (geoIpInput) geoIpInput.value = ip || '';
+                    selectWhatsAppCode(country);
                     console.log(`Detectado via ${api}: ${country}`);
                     success = true;
                 }
@@ -139,7 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     countryName = cityClean.charAt(0).toUpperCase() + cityClean.slice(1);
                 }
                 
-                if (geoCountryVisibleInput) geoCountryVisibleInput.value = countryName;
+                if (geoCountryVisibleInput) {
+                    geoCountryVisibleInput.value = countryName;
+                    selectWhatsAppCode(countryName);
+                }
             } catch (e) {
                 if (geoCountryInput) geoCountryInput.value = 'No detectado';
                 if (geoCountryVisibleInput) geoCountryVisibleInput.value = '';
@@ -191,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nameInput = document.getElementById('user-fullname');
     const emailInput = document.getElementById('user-email');
+    const whatsappInput = document.getElementById('user-whatsapp');
     const countryVisibleInput = document.getElementById('geo-country-visible');
     const professionInput = document.getElementById('user-profession');
     const goalsInput = document.getElementById('user-goals');
@@ -199,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nameError = document.getElementById('name-error-msg');
     const emailError = document.getElementById('email-error-msg');
+    const whatsappError = document.getElementById('whatsapp-error-msg');
     const countryError = document.getElementById('country-error-msg');
     const professionError = document.getElementById('profession-error-msg');
     const goalsError = document.getElementById('goals-error-msg');
@@ -228,6 +247,19 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 emailError.style.display = 'none';
                 emailInput.style.borderColor = '';
+            }
+
+            // Validación WhatsApp (solamente números, longitud de 6 a 15 dígitos)
+            const rawPhone = whatsappInput.value.trim();
+            const phoneDigits = rawPhone.replace(/[\s-]/g, '');
+            const phonePattern = /^[0-9]{6,15}$/;
+            if (rawPhone === '' || !phonePattern.test(phoneDigits)) {
+                whatsappError.style.display = 'block';
+                whatsappInput.style.borderColor = '#FF4D4D';
+                isFormValid = false;
+            } else {
+                whatsappError.style.display = 'none';
+                whatsappInput.style.borderColor = '';
             }
 
             // Validación País Visible
@@ -277,6 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const payload = {
                     nombre: nameInput.value.trim(),
                     email: emailInput.value.trim(),
+                    whatsapp: (document.getElementById('user-whatsapp-code') ? document.getElementById('user-whatsapp-code').value : '') + ' ' + whatsappInput.value.trim(),
                     pais: countryVisibleInput.value.trim(),
                     pais_detectado: geoCountryInput.value,
                     profesion: professionInput.value.trim(),
@@ -330,12 +363,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        countryVisibleInput.addEventListener('input', () => {
-            if (countryVisibleInput.value.trim() !== '') {
-                countryError.style.display = 'none';
-                countryVisibleInput.style.borderColor = '';
+        whatsappInput.addEventListener('input', () => {
+            const rawPhone = whatsappInput.value.trim();
+            const phoneDigits = rawPhone.replace(/[\s-]/g, '');
+            const phonePattern = /^[0-9]{6,15}$/;
+            if (rawPhone !== '' && phonePattern.test(phoneDigits)) {
+                whatsappError.style.display = 'none';
+                whatsappInput.style.borderColor = '';
             }
         });
+
+        if (geoCountryVisibleInput) {
+            geoCountryVisibleInput.addEventListener('input', () => {
+                selectWhatsAppCode(geoCountryVisibleInput.value);
+                if (countryVisibleInput.value.trim() !== '') {
+                    countryError.style.display = 'none';
+                    countryVisibleInput.style.borderColor = '';
+                }
+            });
+        }
 
         professionInput.addEventListener('input', () => {
             if (professionInput.value.trim() !== '') {
@@ -398,8 +444,132 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === 7. INICIALIZAR ICONOS DE LUCIDE ===
+    // === 7. EFECTO DE PARALAJE SUAVE PARA LOS VIDEOS DE FONDO ===
+    const parallaxItems = [
+        { section: document.querySelector('.hero-section'), element: document.querySelector('.hero-bg-video'), speed: 0.25 },
+        { section: document.querySelector('.differentiation-section'), element: document.querySelector('.diff-bg-video'), speed: 0.15 },
+        { section: document.querySelector('.syllabus-section'), element: document.querySelector('.syllabus-bg-video'), speed: 0.15 },
+        { section: document.querySelector('.details-split-section'), element: document.querySelector('.details-split-bg-video'), speed: 0.15 },
+        { section: document.querySelector('.format-section'), element: document.querySelector('.format-bg-image'), speed: 0.15 },
+        { section: document.querySelector('.investment-section'), element: document.querySelector('.investment-bg-video'), speed: 0.15 }
+    ];
+
+    window.addEventListener('scroll', () => {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const viewHeight = window.innerHeight;
+            const viewportCenter = viewHeight / 2;
+
+            parallaxItems.forEach(item => {
+                if (item.section && item.element) {
+                    const rect = item.section.getBoundingClientRect();
+                    const sectionTop = rect.top + scrolled;
+                    
+                    // Solo calcular si está en el viewport visible
+                    if (scrolled + viewHeight > sectionTop && scrolled < sectionTop + rect.height) {
+                        const sectionCenter = rect.top + rect.height / 2;
+                        // Centrar la translación con respecto al centro del viewport para evitar bordes blancos
+                        const offset = (sectionCenter - viewportCenter) * item.speed;
+                        item.element.style.transform = `translate3d(0, ${offset}px, 0)`;
+                    }
+                }
+            });
+        });
+    });
+
+    // === 8. LAZY LOADING DE MULTIMEDIA DE FONDO ===
+    const lazyElements = document.querySelectorAll('video.hero-bg-video, video.diff-bg-video, video.syllabus-bg-video, video.details-split-bg-video, video.investment-bg-video, img.format-bg-image');
+
+    if ('IntersectionObserver' in window) {
+        const mediaObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    if (el.tagName === 'VIDEO') {
+                        const sources = el.querySelectorAll('source');
+                        sources.forEach(source => {
+                            if (source.dataset.src) {
+                                source.src = source.dataset.src;
+                                source.removeAttribute('data-src');
+                            }
+                        });
+                        el.load();
+                        const playPromise = el.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.warn("Autoplay block or loading error:", error);
+                            });
+                        }
+                    } else if (el.tagName === 'IMG') {
+                        if (el.dataset.src) {
+                            el.src = el.dataset.src;
+                            el.removeAttribute('data-src');
+                        }
+                    }
+                    observer.unobserve(el);
+                }
+            });
+        }, { rootMargin: '200px' });
+
+        lazyElements.forEach(el => mediaObserver.observe(el));
+    } else {
+        // Fallback para navegadores antiguos
+        lazyElements.forEach(el => {
+            if (el.tagName === 'VIDEO') {
+                const sources = el.querySelectorAll('source');
+                sources.forEach(source => {
+                    if (source.dataset.src) {
+                        source.src = source.dataset.src;
+                    }
+                });
+                el.load();
+            } else if (el.tagName === 'IMG') {
+                if (el.dataset.src) {
+                    el.src = el.dataset.src;
+                }
+            }
+        });
+    }
+
+    // === 9. EFECTO TYPING Y FADE IN EN SECCIÓN DE DIFERENCIACIÓN ===
+    const diffSectionTarget = document.querySelector('.differentiation-section');
+    const diffTitle = document.querySelector('.diff-right-title');
+    const diffText = document.querySelector('.diff-right-text');
+
+    if (diffSectionTarget && diffTitle && diffText) {
+        const typingText = diffTitle.textContent.trim();
+        diffTitle.textContent = ''; // Limpiar inicialmente para el efecto
+        
+        const typingObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target);
+                    
+                    let index = 0;
+                    const speed = 35; // ms por carácter
+                    
+                    function typeWriter() {
+                        if (index < typingText.length) {
+                            diffTitle.textContent += typingText.charAt(index);
+                            index++;
+                            setTimeout(typeWriter, speed);
+                        } else {
+                            setTimeout(() => {
+                                diffText.classList.add('visible');
+                            }, 250);
+                        }
+                    }
+                    
+                    typeWriter();
+                }
+            });
+        }, { threshold: 0.25 });
+
+        typingObserver.observe(diffSectionTarget);
+    }
+
+    // === 10. INICIALIZAR ICONOS DE LUCIDE ===
     if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+        customElements.whenDefined ? lucide.createIcons() : lucide.createIcons();
     }
 });

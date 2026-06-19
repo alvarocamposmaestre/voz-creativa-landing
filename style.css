@@ -5,10 +5,21 @@
 
 /* --- VARIABLES DEL SISTEMA DE DISEÑO --- */
 :root {
-    /* Colores Principales de la Marca */
-    --color-green-primary: #22B353;  /* Verde oficial Raquel Cartaya */
-    --color-green-light: #47FD84;    /* Verde brillante para degradados */
-    --color-purple-accent: #22B353;  /* Púrpura desactivado, mapeado a verde */
+    /* Colores Principales de la Marca (Verde) */
+    --color-green-primary: #22B353;
+    --color-green-light: #87F8AD;
+    --color-green-dark: #04732A;
+    
+    /* Colores Secundarios - Naranja */
+    --color-orange-primary: #FF7432;
+    --color-orange-light: #F8AC88;
+    --color-orange-dark: #712704;
+
+    /* Colores Secundarios - Púrpura */
+    --color-purple-primary: #7C45C4;
+    --color-purple-light: #B887F8;
+    --color-purple-dark: #330471;
+    
     --color-ochre-accent: #B37922;   /* Ocre dorado */
     
     /* Neutros (LIGHT THEME) */
@@ -46,6 +57,7 @@ a {
 html {
     scroll-behavior: smooth;
     background-color: var(--color-bg-dark);
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -110,7 +122,7 @@ body {
 }
 
 .nav-btn-link {
-    background: linear-gradient(135deg, var(--color-green-primary) 0%, var(--color-green-light) 100%);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 100%);
     color: #FFFFFF !important;
     font-size: 0.82rem;
     font-weight: 600;
@@ -122,7 +134,8 @@ body {
 }
 
 .nav-btn-link:hover {
-    box-shadow: 0 6px 16px rgba(34, 179, 83, 0.35);
+    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 100%);
+    box-shadow: 0 6px 16px rgba(255, 116, 50, 0.35);
     transform: translateY(-2px);
 }
 
@@ -205,7 +218,7 @@ h1, h2, h3, h4 {
 
 /* --- BOTONES Y COMPONENTES DE ACCIÓN --- */
 .btn-cta-primary {
-    background: linear-gradient(135deg, var(--color-green-primary) 0%, var(--color-green-light) 100%);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 100%);
     color: #FFFFFF;
     font-weight: 600;
     font-size: 0.9rem;
@@ -219,6 +232,27 @@ h1, h2, h3, h4 {
 }
 
 .btn-cta-primary:hover {
+    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 100%);
+    box-shadow: 0 10px 25px rgba(255, 116, 50, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-cta-orange {
+    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 100%);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 16px 32px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(255, 116, 50, 0.25);
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-cta-orange:hover {
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 100%);
     box-shadow: 0 10px 25px rgba(34, 179, 83, 0.4);
     transform: translateY(-2px);
 }
@@ -263,6 +297,20 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+.hero-bg-video {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    will-change: transform;
+}
+
 .hero-bg-glow {
     position: absolute;
     top: -10%;
@@ -272,15 +320,30 @@ h1, h2, h3, h4 {
     background: radial-gradient(circle, rgba(34, 179, 83, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
+    animation: floatGlow 15s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(2%, 4%) scale(1.08); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 48px;
-    align-items: stretch;
+    align-items: center;
     position: relative;
     z-index: 1;
+}
+
+.hero-left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .hero-tagline {
@@ -339,19 +402,18 @@ h1, h2, h3, h4 {
 }
 
 .visual-img {
+    height: auto;
+    max-height: 340px;
     width: 100%;
-    height: 100%;
-    max-width: none;
     object-fit: contain;
     display: block;
+    margin: 0 auto;
 }
 
-/* --- OVERVIEW & AUDIENCE SECTION --- */
 .overview-section {
     padding: 60px 0;
-    background-color: var(--color-green-primary);
-    border-top: 1px solid var(--color-green-primary);
-    border-bottom: 1px solid var(--color-green-primary);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-dark) 100%);
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.06), inset 0 -20px 40px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.1);
     color: #FFFFFF;
 }
 
@@ -441,7 +503,23 @@ h1, h2, h3, h4 {
 
 /* --- DIFFERENTIATION SECTION --- */
 .differentiation-section {
+    position: relative;
+    overflow: hidden;
     padding: 60px 0;
+}
+
+.diff-bg-video {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    will-change: transform;
 }
 
 .diff-container {
@@ -487,9 +565,14 @@ h1, h2, h3, h4 {
 }
 
 .academic-places-list li:hover {
-    border-color: var(--color-green-primary);
+    background-color: var(--color-orange-light);
+    border-color: var(--color-orange-primary);
+    color: var(--color-text-dark);
     transform: translateX(6px);
-    box-shadow: 0 4px 12px rgba(34, 179, 83, 0.05);
+    box-shadow: 0 4px 12px rgba(255, 116, 50, 0.15);
+}
+.academic-places-list li:hover i {
+    color: var(--color-orange-dark);
 }
 
 .diff-right {
@@ -510,13 +593,18 @@ h1, h2, h3, h4 {
     font-size: 1.05rem;
     line-height: 1.6;
     color: var(--color-text-grey);
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.diff-right-text.visible {
+    opacity: 1;
 }
 
 .inside-section {
     padding: 60px 0;
-    background-color: var(--color-green-primary);
-    border-top: 1px solid var(--color-green-primary);
-    border-bottom: 1px solid var(--color-green-primary);
+    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 50%, var(--color-orange-dark) 100%);
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.06), inset 0 -20px 40px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.1);
 }
 
 .inside-section .section-tagline {
@@ -551,23 +639,23 @@ h1, h2, h3, h4 {
 }
 
 .accordion-item:hover {
-    background-color: var(--color-green-primary);
-    border-color: var(--color-green-primary);
+    background-color: var(--color-orange-light);
+    border-color: var(--color-orange-primary);
 }
 
 .accordion-item:hover .accordion-header {
-    color: #FFFFFF;
+    color: #1C1B19;
 }
 
 .accordion-item:hover .header-number,
 .accordion-item:hover .accordion-icon {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(28, 27, 25, 0.85);
 }
 
 .accordion-item:hover .content-inner,
 .accordion-item:hover .content-inner p,
 .accordion-item:hover .content-inner li {
-    color: #FFFFFF;
+    color: #1C1B19;
 }
 
 .accordion-item:hover .experts-list-item-title {
@@ -654,10 +742,26 @@ h1, h2, h3, h4 {
 
 /* --- SYLLABUS SECTION --- */
 .syllabus-section {
+    position: relative;
+    overflow: hidden;
     padding: 60px 0;
     background-color: var(--color-bg-card);
     border-top: 1px solid var(--color-border-sutil);
     border-bottom: 1px solid var(--color-border-sutil);
+}
+
+.syllabus-bg-video {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    will-change: transform;
 }
 
 .syllabus-centered-visual {
@@ -721,14 +825,10 @@ h1, h2, h3, h4 {
 
 .marquee-card:hover {
     background-color: var(--color-green-primary);
-    border-color: #FFFFFF;
+    border-color: transparent;
     color: #FFFFFF;
     transform: none;
     box-shadow: 0 8px 20px rgba(34, 179, 83, 0.2);
-}
-
-.marquee-wrapper:hover .marquee-track {
-    animation-play-state: paused;
 }
 
 .marquee-left .marquee-track {
@@ -759,7 +859,23 @@ h1, h2, h3, h4 {
 
 /* --- FORMAT SECTION --- */
 .format-section {
+    position: relative;
+    overflow: hidden;
     padding: 60px 0;
+}
+
+.format-bg-image {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    will-change: transform;
 }
 
 .format-grid {
@@ -781,21 +897,21 @@ h1, h2, h3, h4 {
 }
 
 .format-card:hover {
-    background-color: var(--color-green-primary);
-    border-color: var(--color-green-primary);
+    background-color: var(--color-purple-primary);
+    border-color: var(--color-purple-primary);
 }
 
 .format-badge {
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--color-green-primary);
+    color: var(--color-purple-primary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transition: var(--transition-fast);
 }
 
 .format-card:hover .format-badge {
-    color: var(--color-green-light);
+    color: var(--color-purple-light);
 }
 
 .format-card h3 {
@@ -816,12 +932,15 @@ h1, h2, h3, h4 {
     color: #FFFFFF;
 }
 
-/* --- EXPERTS & ALUMNI --- */
 .experts-section {
     padding: 60px 0;
-    background-color: var(--color-green-primary);
-    border-top: 1px solid var(--color-green-primary);
-    border-bottom: 1px solid var(--color-green-primary);
+    background: linear-gradient(135deg, var(--color-purple-light) 0%, var(--color-purple-primary) 50%, var(--color-purple-dark) 100%);
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.08), inset 0 -20px 40px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.12);
+    color: #FFFFFF;
+}
+
+.experts-section .section-title,
+.experts-section .section-desc {
     color: #FFFFFF;
 }
 
@@ -856,8 +975,8 @@ h1, h2, h3, h4 {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: var(--color-green-primary);
-    padding: 2px;
+    background: var(--color-purple-primary);
+    padding: 3px;
     overflow: hidden;
 }
 
@@ -894,7 +1013,7 @@ h1, h2, h3, h4 {
 
 .speaker-role {
     font-size: 0.8rem;
-    color: var(--color-green-primary);
+    color: var(--color-purple-light);
     font-weight: 600;
 }
 
@@ -918,15 +1037,15 @@ h1, h2, h3, h4 {
 .alumni-badge {
     font-size: 0.72rem;
     font-weight: 700;
-    color: var(--color-green-primary);
+    color: var(--color-purple-dark);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-bottom: 12px;
     display: inline-block;
-    background-color: rgba(34, 179, 83, 0.1);
+    background-color: rgba(149, 91, 224, 0.25);
     padding: 4px 14px;
     border-radius: 20px;
-    border: 1px solid rgba(34, 179, 83, 0.3);
+    border: 1px solid rgba(149, 91, 224, 0.4);
 }
 
 .alumni-masterclass-block h3 {
@@ -946,13 +1065,29 @@ h1, h2, h3, h4 {
     font-size: 0.88rem;
     font-style: italic;
     color: var(--color-text-muted);
-    border-top: 1px solid rgba(34, 179, 83, 0.2);
+    border-top: 1px solid rgba(149, 91, 224, 0.3);
     padding-top: 12px;
 }
 
 /* --- DETAILS GRID --- */
 .details-split-section {
+    position: relative;
+    overflow: hidden;
     padding: 60px 0;
+}
+
+.details-split-bg-video {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    will-change: transform;
 }
 
 .split-grid-details {
@@ -979,8 +1114,8 @@ h1, h2, h3, h4 {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: rgba(34, 179, 83, 0.1);
-    color: var(--color-green-primary);
+    background-color: rgba(184, 135, 248, 0.2);
+    color: var(--color-purple-primary);
     margin-bottom: 8px;
 }
 
@@ -1009,9 +1144,9 @@ h1, h2, h3, h4 {
 
 .detail-tag {
     font-size: 0.85rem;
-    color: var(--color-text-grey);
-    background-color: #FFFFFF;
-    border: 1px solid #EAE8E3;
+    color: #FFFFFF;
+    background-color: var(--color-purple-primary);
+    border: 1px solid var(--color-purple-primary);
     padding: 8px 16px;
     border-radius: 50px;
     transition: var(--transition-fast);
@@ -1021,8 +1156,8 @@ h1, h2, h3, h4 {
 }
 
 .detail-tag:hover {
-    background-color: var(--color-green-primary);
-    border-color: var(--color-green-primary);
+    background-color: var(--color-purple-primary);
+    border-color: var(--color-purple-primary);
     color: #FFFFFF;
 }
 
@@ -1039,12 +1174,10 @@ h1, h2, h3, h4 {
     grid-column: span 2;
 }
 
-/* --- OUTCOMES SECTION --- */
 .outcomes-section {
     padding: 60px 0;
-    background-color: var(--color-green-primary);
-    border-top: 1px solid var(--color-green-primary);
-    border-bottom: 1px solid var(--color-green-primary);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-dark) 100%);
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.08), inset 0 -20px 40px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.12);
     color: #FFFFFF;
 }
 
@@ -1084,7 +1217,7 @@ h1, h2, h3, h4 {
     width: 40px;
     height: 40px;
     background-color: rgba(34, 179, 83, 0.1);
-    border-radius: 10px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1130,13 +1263,14 @@ h1, h2, h3, h4 {
 
 .avatar-glow-frame {
     position: absolute;
-    bottom: -6px;
-    right: -6px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.45);
+    border: 3px solid var(--color-green-dark);
     border-radius: 50%;
-    z-index: 0;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .avatar-img-custom {
@@ -1235,10 +1369,26 @@ h1, h2, h3, h4 {
 
 /* --- NEW INVESTMENT SECTION LAYOUT --- */
 .investment-section {
+    position: relative;
+    overflow: hidden;
     padding: 60px 0;
     background-color: var(--color-bg-dark);
     border-top: 1px solid var(--color-border-sutil);
     border-bottom: 1px solid var(--color-border-sutil);
+}
+
+.investment-bg-video {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    will-change: transform;
 }
 
 .investment-top-grid {
@@ -1265,9 +1415,9 @@ h1, h2, h3, h4 {
 .scarcity-badge {
     display: inline-block;
     padding: 6px 14px;
-    background-color: rgba(179, 121, 34, 0.15);
-    border: 1px solid var(--color-ochre-accent);
-    color: var(--color-ochre-accent);
+    background-color: rgba(255, 116, 50, 0.15);
+    border: 1px solid var(--color-orange-primary);
+    color: var(--color-orange-primary);
     font-size: 0.72rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1286,7 +1436,7 @@ h1, h2, h3, h4 {
 .scarcity-seats-text {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--color-ochre-accent);
+    color: var(--color-orange-primary);
     margin-bottom: 16px;
 }
 
@@ -1296,19 +1446,19 @@ h1, h2, h3, h4 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(34, 179, 83, 0.05);
+    background: rgba(255, 116, 50, 0.05);
     padding: 6px 14px;
     border-radius: 4px;
-    border: 1px solid rgba(34, 179, 83, 0.15);
+    border: 1px solid rgba(255, 116, 50, 0.15);
 }
 
 .pulse-icon {
     width: 6px;
     height: 6px;
-    background-color: var(--color-green-primary);
+    background-color: var(--color-orange-primary);
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 0 6px var(--color-green-primary);
+    box-shadow: 0 0 6px var(--color-orange-primary);
     animation: pulse 2s infinite;
 }
 
@@ -1325,12 +1475,12 @@ h1, h2, h3, h4 {
 
 .price-box-card {
     background-color: #FFFFFF;
-    border: 2px solid var(--color-green-primary);
+    border: none;
     border-radius: 12px;
     padding: 36px 28px;
     width: 100%;
     max-width: 380px;
-    box-shadow: 0 12px 30px rgba(34, 179, 83, 0.06);
+    box-shadow: 0 12px 30px rgba(255, 116, 50, 0.06);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1346,7 +1496,7 @@ h1, h2, h3, h4 {
 .price-val {
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--color-green-primary);
+    color: var(--color-orange-primary);
     line-height: 1;
 }
 
@@ -1365,8 +1515,8 @@ h1, h2, h3, h4 {
 }
 
 .investment-cta-row {
-    background-color: rgba(34, 179, 83, 0.04);
-    border: 1px solid rgba(34, 179, 83, 0.15);
+    background-color: rgba(255, 116, 50, 0.04);
+    border: 1px solid rgba(255, 116, 50, 0.15);
     border-radius: 12px;
     padding: 36px;
     text-align: center;
@@ -1406,10 +1556,10 @@ h1, h2, h3, h4 {
     }
 }
 
-/* --- SIGNUP SECTION --- */
 .signup-section {
     padding: 60px 0;
-    background-color: var(--color-green-primary);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-dark) 100%);
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.06), inset 0 -20px 40px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.1);
     color: #FFFFFF;
 }
 
@@ -1449,6 +1599,18 @@ h1, h2, h3, h4 {
 
 .signup-section p {
     color: rgba(255, 255, 255, 0.88);
+}
+
+/* Force signup info content to have dark/black text and bold paragraphs for readability */
+.signup-info-content,
+.signup-info-content .section-title {
+    color: var(--color-text-dark) !important;
+}
+
+.signup-info-content p,
+.signup-info-content .info-checklist-item p {
+    color: var(--color-text-dark) !important;
+    font-weight: 700;
 }
 
 .signup-form-wrapper {
@@ -1560,7 +1722,7 @@ h1, h2, h3, h4 {
 }
 
 .form-submit-btn {
-    background: linear-gradient(135deg, var(--color-green-primary) 0%, var(--color-green-light) 100%);
+    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 100%);
     color: #FFFFFF;
     border: none;
     padding: 14px;
@@ -1571,7 +1733,7 @@ h1, h2, h3, h4 {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(34, 179, 83, 0.2);
+    box-shadow: 0 6px 16px rgba(255, 116, 50, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1580,6 +1742,7 @@ h1, h2, h3, h4 {
 }
 
 .form-submit-btn:hover {
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 100%);
     box-shadow: 0 8px 20px rgba(34, 179, 83, 0.35);
     transform: translateY(-2px);
 }
@@ -1998,7 +2161,19 @@ section {
     --corner-dark: rgba(0, 0, 0, 0.07);
 }
 
-/* Secciones sobre fondo verde: glow blanco y esquina más pronunciada */
+/* Glow de color morado para secciones de Detalles y Formatos */
+.details-split-section,
+.format-section {
+    --glow-color: rgba(124, 69, 196, 0.16);
+}
+
+/* Glow de color naranja para secciones de Inversión y Diferenciación */
+.investment-section,
+.differentiation-section {
+    --glow-color: rgba(255, 116, 50, 0.16);
+}
+
+/* Secciones sobre fondo verde/morado/naranja: glow blanco y esquina más pronunciada */
 .overview-section,
 .inside-section,
 .outcomes-section,
