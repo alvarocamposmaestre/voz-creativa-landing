@@ -30,5 +30,13 @@
     "status": "done",
     "sdd": true,
     "priority": "high"
+  },
+  {
+    "id": 5,
+    "name": "alumni_block_full_width",
+    "description": "Redimensionar la tarjeta de exalumnos (alumni-masterclass-block) al ancho total de la sección",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
   }
 ]

@@ -1,5 +1,5 @@
 {
-    "current_feature": "copy_and_layout_polishing",
+    "current_feature": "alumni_block_full_width",
     "current_phase": "Trigger",
     "phase_dag": [
         "Blueprint",
