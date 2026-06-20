@@ -417,7 +417,7 @@ h1, h2, h3, h4 {
 
 .overview-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-dark) 100%);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-primary) 100%);
     box-shadow: inset 0 20px 40px rgba(0,0,0,0.06), inset 0 -20px 40px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.1);
     color: #FFFFFF;
 }
@@ -608,7 +608,7 @@ h1, h2, h3, h4 {
 
 .inside-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 50%, var(--color-orange-dark) 100%);
+    background: linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-orange-primary) 50%, var(--color-orange-primary) 100%);
     box-shadow: inset 0 20px 40px rgba(0,0,0,0.06), inset 0 -20px 40px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.1);
 }
 
@@ -939,7 +939,7 @@ h1, h2, h3, h4 {
 
 .experts-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--color-purple-light) 0%, var(--color-purple-primary) 50%, var(--color-purple-dark) 100%);
+    background: linear-gradient(135deg, var(--color-purple-light) 0%, var(--color-purple-primary) 50%, var(--color-purple-primary) 100%);
     box-shadow: inset 0 20px 40px rgba(0,0,0,0.08), inset 0 -20px 40px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.12);
     color: #FFFFFF;
 }
@@ -1181,7 +1181,7 @@ h1, h2, h3, h4 {
 
 .outcomes-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-dark) 100%);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-primary) 100%);
     box-shadow: inset 0 20px 40px rgba(0,0,0,0.08), inset 0 -20px 40px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.12);
     color: #FFFFFF;
 }
@@ -1596,7 +1596,7 @@ h1, h2, h3, h4 {
 
 .signup-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-dark) 100%);
+    background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-primary) 50%, var(--color-green-primary) 100%);
     box-shadow: inset 0 20px 40px rgba(0,0,0,0.06), inset 0 -20px 40px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.1);
     color: #FFFFFF;
 }
@@ -2215,6 +2215,14 @@ h1, h2, h3, h4 {
         grid-column: auto;
         max-width: 160px !important;
     }
+    
+    .logo-desktop-only {
+        display: none !important;
+    }
+    
+    .logo-mobile-only {
+        display: block !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2322,6 +2330,18 @@ section > * {
     max-width: 320px;
     opacity: 0.95;
     grid-column: 1;
+}
+
+.logo-desktop-only {
+    display: block;
+    margin-top: 32px;
+    margin-left: 0;
+    margin-right: auto;
+    grid-column: auto;
+}
+
+.logo-mobile-only {
+    display: none;
 }
 
 .signup-logo-img {

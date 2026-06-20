@@ -1,5 +1,5 @@
 {
-    "current_feature": "alumni_block_full_width",
+    "current_feature": "signup_layout_and_gradients",
     "current_phase": "Trigger",
     "phase_dag": [
         "Blueprint",
@@ -9,9 +9,6 @@
         "Trigger"
     ],
     "checkpoints_verified": [
-        "Specs-Created",
-        "Environment-Configured",
-        "Tests-Verified",
         "Trigger"
     ],
     "locked": false

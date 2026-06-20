@@ -38,5 +38,13 @@
     "status": "done",
     "sdd": true,
     "priority": "high"
+  },
+  {
+    "id": 6,
+    "name": "signup_layout_and_gradients",
+    "description": "Ajustar diseño del logo de registro en desktop/mobile y simplificar gradientes de fondo eliminando el tercer tono (oscuro)",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
   }
 ]
