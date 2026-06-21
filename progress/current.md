@@ -19,6 +19,10 @@
 - `[ ]` Configurar la plantilla HTML en cada módulo de Gmail:
   - En la rama de **Venezuela**: Usar el código HTML de [venezuela_email.html](file:///c:/Users/alvar/Documents/Diseño/Raquel%20Cartaya%20Studio/Voz%20Creativa%20-%20Raquel%20Cartaya/venezuela_email.html).
   - En la rama **Internacional**: Usar el código HTML de [international_email.html](file:///c:/Users/alvar/Documents/Diseño/Raquel%20Cartaya%20Studio/Voz%20Creativa%20-%20Raquel%20Cartaya/international_email.html).
-  - En ambas plantillas, reemplazar la etiqueta `{{nombre}}` con el valor dinámico `nombre` obtenido del Webhook.
+  - **Formatear el Nombre Dinámico en Make:** En lugar de usar la variable `nombre` directamente en los correos, utilizar la siguiente fórmula en el campo de texto del saludo para extraer solo el primer nombre en formato Título (primera mayúscula, resto minúsculas):
+    ```text
+    {{capitalize(first(split(nombre; " ")))}}
+    ```
+    *Nota para el agente: Esta fórmula divide el nombre completo por espacios, extrae la primera palabra y la capitaliza para que quede un saludo personalizado (ej: 'Natalia Hernández' -> 'Natalia'), manteniendo el nombre completo original guardado en el Data store.*
 - `[ ]` Activar el escenario de Make.com cambiando el interruptor **Scheduling** a **ON**.
 
