@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // === CONFIGURACIÓN DE CONEXIÓN ===
-    const WEBHOOK_URL = 'https://hook.us2.make.com/r4923rfq2knvtv24zxg0shd66tci7o2i';
+    const WEBHOOK_URL = 'https://hook.us2.make.com/7igt46ndla249vbxfmoeofg0bq8kmz5g';
     const BRAND_WEBSITE = 'https://raquelcartayastudio.com/';
 
     // === 1. MENÚ DE NAVEGACIÓN MÓVIL ===

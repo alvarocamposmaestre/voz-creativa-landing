@@ -1,5 +1,5 @@
 {
-    "current_feature": "signup_layout_and_gradients",
+    "current_feature": "webhook_and_email_automation",
     "current_phase": "Trigger",
     "phase_dag": [
         "Blueprint",

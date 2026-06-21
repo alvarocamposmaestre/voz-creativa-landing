@@ -46,5 +46,13 @@
     "status": "done",
     "sdd": true,
     "priority": "high"
+  },
+  {
+    "id": 7,
+    "name": "webhook_and_email_automation",
+    "description": "Integración del formulario con Make.com, almacenamiento local en Data Store y envío de correos segmentado por país mediante Gmail",
+    "status": "done",
+    "sdd": true,
+    "priority": "high"
   }
 ]
