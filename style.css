@@ -742,7 +742,7 @@ h1, h2, h3, h4 {
 
 .accordion-item.active .accordion-icon {
     transform: rotate(45deg);
-    color: var(--color-green-primary);
+    color: var(--color-text-dark);
 }
 
 /* --- SYLLABUS SECTION --- */
