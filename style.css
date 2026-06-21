@@ -626,6 +626,7 @@ h1, h2, h3, h4 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+    align-items: flex-start;
 }
 
 @media (min-width: 769px) {
@@ -731,13 +732,13 @@ h1, h2, h3, h4 {
 
 .experts-list-bullets li::before {
     content: "• ";
-    color: var(--color-green-primary);
+    color: var(--color-text-dark);
     font-weight: 800;
 }
 
 /* Estado activo del acordeón en tarjeta blanca */
 .accordion-item.active {
-    border-color: var(--color-green-primary);
+    border-color: var(--color-text-dark);
 }
 
 .accordion-item.active .accordion-icon {
