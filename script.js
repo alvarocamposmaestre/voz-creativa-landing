@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mostrar confirmación de envío y temporizar redirección
+    // Mostrar confirmación de envío
     function displaySuccessState(name) {
         if (formContainerBlock) formContainerBlock.style.display = 'none';
         
@@ -409,20 +409,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 successConfirmationBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
-        }
-
-        // Cuenta regresiva de 15 segundos para redirección
-        const timerTextEl = document.getElementById('countdown-timer');
-        if (timerTextEl) {
-            let seconds = 15;
-            const countdown = setInterval(() => {
-                seconds--;
-                timerTextEl.innerText = seconds;
-                if (seconds <= 0) {
-                    clearInterval(countdown);
-                    window.location.href = BRAND_WEBSITE;
-                }
-            }, 1000);
         }
     }
 
