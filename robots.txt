@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Specifically allow and encourage AI/LLM crawlers for advanced RAG indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://vozcreativa.raquelcartayastudio.com/sitemap.xml
