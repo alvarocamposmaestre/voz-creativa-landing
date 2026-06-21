@@ -391,11 +391,109 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+/* --- HERO BADGES (Sense of Urgency) --- */
+.hero-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: var(--transition-fast);
+}
+
+.hero-badge.badge-date {
+    background-color: rgba(34, 179, 83, 0.12);
+    border: 1px solid rgba(34, 179, 83, 0.35);
+    color: var(--color-green-dark);
+}
+
+.hero-badge.badge-limit {
+    background-color: rgba(28, 27, 25, 0.06);
+    border: 1px solid rgba(28, 27, 25, 0.18);
+    color: var(--color-text-dark);
+}
+
+.dot-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-green-primary);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    box-shadow: 0 0 8px var(--color-green-primary);
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* --- FORMAT BADGES (Purple Accent) --- */
+.format-badges {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.format-badge-item {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: var(--transition-fast);
+}
+
+.format-badge-item.badge-date-purple {
+    background-color: rgba(124, 69, 196, 0.12);
+    border: 1px solid rgba(124, 69, 196, 0.35);
+    color: var(--color-purple-dark);
+}
+
+.format-badge-item.badge-limit-purple {
+    background-color: rgba(28, 27, 25, 0.06);
+    border: 1px solid rgba(28, 27, 25, 0.18);
+    color: var(--color-text-dark);
+}
+
+.dot-pulse-purple {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-purple-primary);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    box-shadow: 0 0 8px var(--color-purple-primary);
+    animation: pulse-dot-purple 2s infinite;
+}
+
+@keyframes pulse-dot-purple {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.3); opacity: 1; }
+}
+
 .hero-right-visual {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     height: 100%;
+    padding-top: 0;
 }
 
 .visual-wrapper {
@@ -408,7 +506,7 @@ h1, h2, h3, h4 {
 
 .visual-img {
     height: auto;
-    max-height: 340px;
+    max-height: 360px;
     width: 100%;
     object-fit: contain;
     display: block;
@@ -2103,6 +2201,8 @@ h1, h2, h3, h4 {
     
     .hero-right-visual {
         height: auto;
+        align-items: center;
+        padding-top: 0;
     }
     
     .visual-wrapper {
@@ -2128,6 +2228,10 @@ h1, h2, h3, h4 {
     }
     
     .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-badges {
         justify-content: center;
     }
 
