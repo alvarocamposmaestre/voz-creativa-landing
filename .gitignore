@@ -17,3 +17,18 @@ build/
 .idea/
 .DS_Store
 Thumbs.db
+
+# BLAST 4.0 Protocol & Development Files
+.agent/
+progress/
+specs/
+tools/
+AGENTS.md
+BLAST.md
+CHECKPOINTS.md
+CONSTITUTION.md
+feature_list.json
+mcp_registry.json
+# Git lock files
+*.af~lock~
+
