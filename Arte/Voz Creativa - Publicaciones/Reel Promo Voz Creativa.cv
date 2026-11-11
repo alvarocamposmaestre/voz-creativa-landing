@@ -1,0 +1,1049 @@
+{
+ "activeComp": "compNode#1",
+ "assets": [
+  {
+   "data": { "filePath": "@project/..\\..\\Voz Creativa - Raquel Cartaya\\Arte\\Voz Creativa - Flyer WhatsApp\\Flyer Animado Voz Creativa.mp4" },
+   "nodeId": "asset#2",
+   "type": "file"
+  }
+ ],
+ "connections": [
+  { "from": "compNode#1.time", "to": "sound#5.time" },
+  { "from": "asset#2.id", "to": "sound#5.file" },
+  { "from": "compNode#1.fps", "to": "sound#5.fps" },
+  { "from": "visibilityCurve#9.out", "to": "sound#5.on" },
+  { "from": "renderMP4#1.id", "to": "renderQueueItem#1.generator" },
+  { "from": "compNode#1.id", "to": "renderQueueItem#1.targets.0.id" },
+  { "from": "imageShader#1.id", "to": "colorMaterial#1.colorShaders.0.shader" },
+  { "from": "compNode#1.time", "to": "visibilityCurve#6.time" },
+  { "from": "keyframe#12.id", "to": "visibilityCurve#6.keyframes.1" },
+  { "from": "compNode#1.outActiveAnimationLayer", "to": "visibilityCurve#6.activeAnimationLayer" },
+  { "from": "keyframe#11.id", "to": "visibilityCurve#6.keyframes.0" },
+  { "from": "colorMaterial#1.id", "to": "footageShape#1.material" },
+  { "from": "imageShader#1.id", "to": "footageShape#1.footageShader" },
+  { "from": "visibilityCurve#5.out", "to": "footageShape#1.on" },
+  { "from": "compNode#1.outActiveAnimationLayer", "to": "visibilityCurve#5.activeAnimationLayer" },
+  { "from": "compNode#1.time", "to": "visibilityCurve#5.time" },
+  { "from": "keyframe#9.id", "to": "visibilityCurve#5.keyframes.0" },
+  { "from": "keyframe#10.id", "to": "visibilityCurve#5.keyframes.1" },
+  { "from": "compNode#1.time", "to": "imageShader#1.time" },
+  { "from": "compNode#1.fps", "to": "imageShader#1.inFps" },
+  { "from": "compNode#1.fps", "to": "imageShader#1.fps" },
+  { "from": "visibilityCurve#5.out", "to": "imageShader#1.on" },
+  { "from": "compNode#1.resolution", "to": "imageShader#1.resolution" },
+  { "from": "asset#2.id", "to": "imageShader#1.image" },
+  { "from": "asset#2.id", "to": "sound#4.file" },
+  { "from": "compNode#1.time", "to": "sound#4.time" },
+  { "from": "visibilityCurve#7.out", "to": "sound#4.on" },
+  { "from": "compNode#1.fps", "to": "sound#4.fps" },
+  { "from": "keyframe#20.id", "to": "visibilityCurve#10.keyframes.1" },
+  { "from": "compNode#1.time", "to": "visibilityCurve#10.time" },
+  { "from": "keyframe#19.id", "to": "visibilityCurve#10.keyframes.0" },
+  { "from": "compNode#1.outActiveAnimationLayer", "to": "visibilityCurve#10.activeAnimationLayer" },
+  { "from": "compNode#1.time", "to": "visibilityCurve#9.time" },
+  { "from": "keyframe#22.id", "to": "visibilityCurve#9.keyframes.1" },
+  { "from": "keyframe#21.id", "to": "visibilityCurve#9.keyframes.0" },
+  { "from": "compNode#1.outActiveAnimationLayer", "to": "visibilityCurve#9.activeAnimationLayer" },
+  { "from": "asset#2.id", "to": "sound#3.file" },
+  { "from": "visibilityCurve#6.out", "to": "sound#3.on" },
+  { "from": "compNode#1.time", "to": "sound#3.time" },
+  { "from": "compNode#1.fps", "to": "sound#3.fps" },
+  { "from": "compNode#1.time", "to": "visibilityCurve#7.time" },
+  { "from": "keyframe#17.id", "to": "visibilityCurve#7.keyframes.1" },
+  { "from": "compNode#1.outActiveAnimationLayer", "to": "visibilityCurve#7.activeAnimationLayer" },
+  { "from": "keyframe#16.id", "to": "visibilityCurve#7.keyframes.0" },
+  { "from": "compNode#1.time", "to": "visibilityCurve#8.time" },
+  { "from": "keyframe#14.id", "to": "visibilityCurve#8.keyframes.0" },
+  { "from": "compNode#1.outActiveAnimationLayer", "to": "visibilityCurve#8.activeAnimationLayer" },
+  { "from": "keyframe#15.id", "to": "visibilityCurve#8.keyframes.1" },
+  { "from": "compNode#1.time", "to": "imageShader#2.time" },
+  { "from": "compNode#1.fps", "to": "imageShader#2.inFps" },
+  { "from": "compNode#1.fps", "to": "imageShader#2.fps" },
+  { "from": "visibilityCurve#8.out", "to": "imageShader#2.on" },
+  { "from": "asset#2.id", "to": "imageShader#2.image" },
+  { "from": "compNode#1.resolution", "to": "imageShader#2.resolution" },
+  { "from": "compNode#1.time", "to": "imageShader#3.time" },
+  { "from": "compNode#1.fps", "to": "imageShader#3.inFps" },
+  { "from": "compNode#1.resolution", "to": "imageShader#3.resolution" },
+  { "from": "compNode#1.fps", "to": "imageShader#3.fps" },
+  { "from": "visibilityCurve#10.out", "to": "imageShader#3.on" },
+  { "from": "asset#2.id", "to": "imageShader#3.image" },
+  { "from": "imageShader#3.id", "to": "colorMaterial#3.colorShaders.0.shader" },
+  { "from": "colorMaterial#3.id", "to": "footageShape#3.material" },
+  { "from": "visibilityCurve#10.out", "to": "footageShape#3.on" },
+  { "from": "imageShader#3.id", "to": "footageShape#3.footageShader" },
+  { "from": "imageShader#2.id", "to": "colorMaterial#2.colorShaders.0.shader" },
+  { "from": "colorMaterial#2.id", "to": "footageShape#2.material" },
+  { "from": "imageShader#2.id", "to": "footageShape#2.footageShader" },
+  { "from": "visibilityCurve#8.out", "to": "footageShape#2.on" }
+ ],
+ "dependencyGraph": {
+  "tabs": [
+   { "compId": "compNode#1", "name": "", "positions": [] }
+  ]
+ },
+ "labelColors": "Pastel",
+ "nodeMeta": [
+  {
+   "children": [ "hiddenFolder#10" ],
+   "nodeId": "sound#5"
+  },
+  {
+   "children": [ "colorArray#1" ],
+   "nodeId": "paletteContainer#1"
+  },
+  {
+   "children": [ "renderQueueItem#1" ],
+   "nodeId": "renderQueue#1"
+  },
+  {
+   "children": [ "keyframe#13", "keyframe#18", "footageShape#3", "footageShape#2", "footageShape#1" ],
+   "nodeId": "compNode#1"
+  },
+  {
+   "children": [ "asset#2", "compNode#1" ],
+   "nodeId": "asset#1"
+  },
+  {
+   "children": [ "hiddenFolder#12" ],
+   "nodeId": "renderQueueItem#1"
+  },
+  {
+   "children": [ "renderMP4#1" ],
+   "nodeId": "hiddenFolder#12"
+  },
+  {
+   "children": [ "visibilityCurve#5" ],
+   "nodeId": "hiddenFolder#4"
+  },
+  {
+   "children": [ "keyframe#12", "keyframe#11" ],
+   "nodeId": "visibilityCurve#6"
+  },
+  {
+   "children": [ "imageShader#1", "sound#3", "hiddenFolder#3" ],
+   "nodeId": "footageShape#1"
+  },
+  {
+   "children": [ "keyframe#10", "keyframe#9" ],
+   "nodeId": "visibilityCurve#5"
+  },
+  {
+   "children": [ "motionBlurFilter#1", "strokeMaterial#1", "colorMaterial#1" ],
+   "nodeId": "hiddenFolder#3"
+  },
+  {
+   "children": [ "hiddenFolder#4" ],
+   "nodeId": "imageShader#1"
+  },
+  {
+   "children": [ "visibilityCurve#6" ],
+   "nodeId": "hiddenFolder#5"
+  },
+  {
+   "children": [ "hiddenFolder#8" ],
+   "nodeId": "sound#4"
+  },
+  {
+   "children": [ "keyframe#20", "keyframe#19" ],
+   "nodeId": "visibilityCurve#10"
+  },
+  {
+   "children": [ "keyframe#22", "keyframe#21" ],
+   "nodeId": "visibilityCurve#9"
+  },
+  {
+   "children": [ "hiddenFolder#5" ],
+   "nodeId": "sound#3"
+  },
+  {
+   "children": [ "keyframe#17", "keyframe#16" ],
+   "nodeId": "visibilityCurve#7"
+  },
+  {
+   "children": [ "keyframe#15", "keyframe#14" ],
+   "nodeId": "visibilityCurve#8"
+  },
+  {
+   "children": [ "visibilityCurve#10" ],
+   "nodeId": "hiddenFolder#11"
+  },
+  {
+   "children": [ "motionBlurFilter#2", "strokeMaterial#2", "colorMaterial#2" ],
+   "nodeId": "hiddenFolder#7"
+  },
+  {
+   "children": [ "hiddenFolder#6" ],
+   "nodeId": "imageShader#2"
+  },
+  {
+   "children": [ "visibilityCurve#7" ],
+   "nodeId": "hiddenFolder#8"
+  },
+  {
+   "children": [ "motionBlurFilter#3", "strokeMaterial#3", "colorMaterial#3" ],
+   "nodeId": "hiddenFolder#9"
+  },
+  {
+   "children": [ "hiddenFolder#11" ],
+   "nodeId": "imageShader#3"
+  },
+  {
+   "children": [ "imageShader#3", "sound#5", "hiddenFolder#9" ],
+   "nodeId": "footageShape#3"
+  },
+  {
+   "children": [ "visibilityCurve#9" ],
+   "nodeId": "hiddenFolder#10"
+  },
+  {
+   "children": [ "visibilityCurve#8" ],
+   "nodeId": "hiddenFolder#6"
+  },
+  {
+   "children": [ "imageShader#2", "sound#4", "hiddenFolder#7" ],
+   "nodeId": "footageShape#2"
+  }
+ ],
+ "nodes": [
+  {
+   "attributes": {
+    "colorId": { "value": 10, "varType": "int" },
+    "fps": { "value": 25.0, "varType": "double" },
+    "frameOffset": { "value": 370.0, "varType": "double" },
+    "niceName": { "value": "Sound 2", "varType": "string" },
+    "time": { "value": 208.0, "varType": "double" },
+    "uuid": { "value": "3f344a52-4fdc-4f20-a20f-f3ec73bebbce", "varType": "string" },
+    "weightingGraph": {
+     "list": [
+      {
+       "compound": {
+        "left": {
+         "value": { "x": -0.5, "y": 0.0 },
+         "varType": "double2"
+        },
+        "position": {
+         "value": { "x": 0.0, "y": 0.5 },
+         "varType": "double2"
+        },
+        "right": {
+         "value": { "x": 0.5, "y": 0.0 },
+         "varType": "double2"
+        }
+       }
+      },
+      {
+       "compound": {
+        "left": {
+         "value": { "x": -0.5, "y": 0.0 },
+         "varType": "double2"
+        },
+        "position": {
+         "value": { "x": 1.0, "y": 0.5 },
+         "varType": "double2"
+        },
+        "right": {
+         "value": { "x": 0.5, "y": 0.0 },
+         "varType": "double2"
+        }
+       }
+      }
+     ]
+    }
+   },
+   "nodeId": "sound#5",
+   "nodeType": "sound"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 12, "varType": "int" },
+    "niceName": { "value": "Flyer Animado Voz Creativa", "varType": "string" },
+    "uuid": { "value": "ef4302af-d527-40ea-8d79-b942f9a79cc6", "varType": "string" }
+   },
+   "nodeId": "asset#2",
+   "nodeType": "asset"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "Default Scene Palette", "varType": "string" },
+    "uuid": { "value": "d393a65d-254e-48ad-bdef-3ee1ad496742", "varType": "string" }
+   },
+   "nodeId": "colorArray#1",
+   "nodeType": "colorArray"
+  },
+  { "nodeId": "paletteContainer#1", "nodeType": "paletteContainer" },
+  {
+   "attributes": {
+    "niceName": { "value": "Render Manager", "varType": "string" },
+    "uuid": { "value": "14e3dc00-c00e-4b0b-8409-0423d3ecf884", "varType": "string" }
+   },
+   "nodeId": "dynamicIndexManager#1",
+   "nodeType": "dynamicIndexManager"
+  },
+  { "nodeId": "renderQueue#1", "nodeType": "renderQueue" },
+  {
+   "attributes": {
+    "colorId": { "value": 3, "varType": "int" },
+    "endFrame": { "value": 639, "varType": "int" },
+    "inTime": { "value": 208.0, "varType": "double" },
+    "niceName": { "value": "Composition 1", "varType": "string" },
+    "playbackEnd": { "value": 553, "varType": "int" },
+    "playbackStart": { "value": 2, "varType": "int" },
+    "resolution": {
+     "value": { "x": 1080, "y": 1920 },
+     "varType": "int2"
+    },
+    "uuid": { "value": "20439733-de01-4ad8-8e29-f79b117f7dd8", "varType": "string" }
+   },
+   "nodeId": "compNode#1",
+   "nodeType": "compNode"
+  },
+  {
+   "attributes": {
+    "uuid": { "value": "80764fdb-c519-4ada-b677-a81189dc8eba", "varType": "string" }
+   },
+   "nodeId": "asset#1",
+   "nodeType": "asset"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 9, "varType": "int" },
+    "fileName": { "value": "Flyer Reel - Voz Creativa", "varType": "string" },
+    "filePath": { "value": "@project/..\\..\\Voz Creativa - Raquel Cartaya\\Arte\\Voz Creativa - Flyer WhatsApp", "varType": "string" },
+    "frameRange": {
+     "value": { "x": 2, "y": 553 },
+     "varType": "int2"
+    },
+    "niceName": { "value": "Composition 1 Render Item", "varType": "string" },
+    "targets": {
+     "list": [ {} ]
+    },
+    "uuid": { "value": "66778ddf-f905-4860-a6e4-7733bce4243e", "varType": "string" }
+   },
+   "nodeId": "renderQueueItem#1",
+   "nodeType": "renderQueueItem"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "2d785a3a-0fe4-48b2-97ef-0b695bdaa2e7", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#12",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 250.0, "varType": "double" },
+    "uuid": { "value": "3f2b1f7f-93ff-4c35-97f9-20c08ba4108b", "varType": "string" }
+   },
+   "nodeId": "keyframe#8",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 6, "varType": "int" },
+    "colorShaders": {
+     "list": [ {} ]
+    },
+    "materialColor": {
+     "value": { "a": 0, "b": 100, "g": 100, "r": 100 },
+     "varType": "color"
+    },
+    "niceName": { "value": "Fill", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "78abe4a5-b173-46af-9fad-69c41a8d9f96", "varType": "string" }
+   },
+   "nodeId": "colorMaterial#1",
+   "nodeType": "colorMaterial"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "6f0e19a0-5b0a-492e-84e1-69a6cef43a8b", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#4",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "419620ac-f5bb-454f-b737-754848747f82", "varType": "string" }
+   },
+   "nodeId": "keyframe#9",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 192.0, "varType": "double" },
+    "uuid": { "value": "2fe96447-f861-4b9e-8067-c566c1656f37", "varType": "string" }
+   },
+   "nodeId": "keyframe#10",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "bd9affbb-c91a-4aec-8ba7-95deaa6ffa34", "varType": "string" }
+   },
+   "nodeId": "keyframe#11",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 192.0, "varType": "double" },
+    "uuid": { "value": "cd66542a-c249-4f75-9265-4464da879225", "varType": "string" }
+   },
+   "nodeId": "keyframe#12",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 14, "varType": "int" },
+    "niceName": { "value": "Motion Blur 2", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "91e968fa-66c4-40d4-b4eb-de6a48e87cc2", "varType": "string" }
+   },
+   "nodeId": "motionBlurFilter#3",
+   "nodeType": "motionBlurFilter"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 14, "varType": "int" },
+    "niceName": { "value": "Motion Blur", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "91e968fa-66c4-40d4-b4eb-de6a48e87cc2", "varType": "string" }
+   },
+   "nodeId": "motionBlurFilter#1",
+   "nodeType": "motionBlurFilter"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 14, "varType": "int" },
+    "niceName": { "value": "Motion Blur 1", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "91e968fa-66c4-40d4-b4eb-de6a48e87cc2", "varType": "string" }
+   },
+   "nodeId": "motionBlurFilter#2",
+   "nodeType": "motionBlurFilter"
+  },
+  {
+   "attributes": {
+    "keyframes": {
+     "list": [
+      { "varType": "nodeId" },
+      { "varType": "nodeId" }
+     ]
+    }
+   },
+   "nodeId": "visibilityCurve#6",
+   "nodeType": "visibilityCurve"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 2, "varType": "int" },
+    "hierarchy": { "value": false, "varType": "bool" },
+    "niceName": { "value": "Flyer Animado Voz Creativa", "varType": "string" },
+    "on": { "value": false, "varType": "bool" },
+    "scale": {
+     "aspectRatio": 1.0,
+     "value": { "x": 1.5, "y": 1.5 },
+     "varType": "double2"
+    },
+    "uuid": { "value": "7700b32e-f7c2-49cc-9c7f-911012d525ce", "varType": "string" }
+   },
+   "nodeId": "footageShape#1",
+   "nodeType": "footageShape"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 6, "varType": "int" },
+    "gradient": {
+     "list": [
+      {
+       "compound": {
+        "color": {
+         "value": { "a": 255, "b": 0, "g": 0, "r": 0 },
+         "varType": "color"
+        }
+       }
+      },
+      {
+       "compound": {
+        "color": {
+         "value": { "a": 255, "b": 255, "g": 255, "r": 255 },
+         "varType": "color"
+        },
+        "position": { "value": 1.0, "varType": "double" }
+       }
+      }
+     ]
+    },
+    "niceName": { "value": "Stroke", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "b62ddeb0-dcf3-4f21-91de-82b91ebe8672", "varType": "string" }
+   },
+   "nodeId": "strokeMaterial#1",
+   "nodeType": "strokeMaterial"
+  },
+  {
+   "attributes": {
+    "keyframes": {
+     "list": [
+      { "varType": "nodeId" },
+      { "varType": "nodeId" }
+     ]
+    },
+    "time": { "value": 208.0, "varType": "double" }
+   },
+   "nodeId": "visibilityCurve#5",
+   "nodeType": "visibilityCurve"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "8bb1ea09-f8b5-440b-b344-3cbb326e8305", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#3",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "0b459553-0126-48f1-91c8-e4feb7ad6144", "varType": "string" }
+   },
+   "nodeId": "keyframe#7",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 14, "varType": "int" },
+    "fps": { "value": 25.0, "varType": "double" },
+    "inFps": { "value": 25.0, "varType": "double" },
+    "niceName": { "value": "Flyer Animado Voz Creativa Image Shader", "varType": "string" },
+    "resolution": {
+     "value": { "x": 1080, "y": 1920 },
+     "varType": "int2"
+    },
+    "time": { "value": 208.0, "varType": "double" },
+    "uuid": { "value": "1d6755d5-53f6-4f1a-bce1-908f78cb552e", "varType": "string" }
+   },
+   "nodeId": "imageShader#1",
+   "nodeType": "imageShader"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "116dbe28-ede1-4dd6-a49f-80cedf285436", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#5",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 10, "varType": "int" },
+    "fps": { "value": 25.0, "varType": "double" },
+    "frameOffset": { "value": 185.0, "varType": "double" },
+    "niceName": { "value": "Sound 1", "varType": "string" },
+    "time": { "value": 208.0, "varType": "double" },
+    "uuid": { "value": "3f344a52-4fdc-4f20-a20f-f3ec73bebbce", "varType": "string" },
+    "weightingGraph": {
+     "list": [
+      {
+       "compound": {
+        "left": {
+         "value": { "x": -0.5, "y": 0.0 },
+         "varType": "double2"
+        },
+        "position": {
+         "value": { "x": 0.0, "y": 0.5 },
+         "varType": "double2"
+        },
+        "right": {
+         "value": { "x": 0.5, "y": 0.0 },
+         "varType": "double2"
+        }
+       }
+      },
+      {
+       "compound": {
+        "left": {
+         "value": { "x": -0.5, "y": 0.0 },
+         "varType": "double2"
+        },
+        "position": {
+         "value": { "x": 1.0, "y": 0.5 },
+         "varType": "double2"
+        },
+        "right": {
+         "value": { "x": 0.5, "y": 0.0 },
+         "varType": "double2"
+        }
+       }
+      }
+     ]
+    }
+   },
+   "nodeId": "sound#4",
+   "nodeType": "sound"
+  },
+  {
+   "attributes": {
+    "keyframes": {
+     "list": [
+      { "varType": "nodeId" },
+      { "varType": "nodeId" }
+     ]
+    },
+    "time": { "value": 208.0, "varType": "double" }
+   },
+   "nodeId": "visibilityCurve#10",
+   "nodeType": "visibilityCurve"
+  },
+  {
+   "attributes": {
+    "keyframes": {
+     "list": [
+      { "varType": "nodeId" },
+      { "varType": "nodeId" }
+     ]
+    },
+    "time": { "value": 208.0, "varType": "double" }
+   },
+   "nodeId": "visibilityCurve#9",
+   "nodeType": "visibilityCurve"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 10, "varType": "int" },
+    "fps": { "value": 25.0, "varType": "double" },
+    "niceName": { "value": "Sound", "varType": "string" },
+    "time": { "value": 208.0, "varType": "double" },
+    "uuid": { "value": "3f344a52-4fdc-4f20-a20f-f3ec73bebbce", "varType": "string" },
+    "weightingGraph": {
+     "list": [
+      {
+       "compound": {
+        "left": {
+         "value": { "x": -0.5, "y": 0.0 },
+         "varType": "double2"
+        },
+        "position": {
+         "value": { "x": 0.0, "y": 0.5 },
+         "varType": "double2"
+        },
+        "right": {
+         "value": { "x": 0.5, "y": 0.0 },
+         "varType": "double2"
+        }
+       }
+      },
+      {
+       "compound": {
+        "left": {
+         "value": { "x": -0.5, "y": 0.0 },
+         "varType": "double2"
+        },
+        "position": {
+         "value": { "x": 1.0, "y": 0.5 },
+         "varType": "double2"
+        },
+        "right": {
+         "value": { "x": 0.5, "y": 0.0 },
+         "varType": "double2"
+        }
+       }
+      }
+     ]
+    }
+   },
+   "nodeId": "sound#3",
+   "nodeType": "sound"
+  },
+  {
+   "attributes": {
+    "keyframes": {
+     "list": [
+      { "varType": "nodeId" },
+      { "varType": "nodeId" }
+     ]
+    },
+    "time": { "value": 208.0, "varType": "double" }
+   },
+   "nodeId": "visibilityCurve#7",
+   "nodeType": "visibilityCurve"
+  },
+  {
+   "attributes": {
+    "keyframes": {
+     "list": [
+      { "varType": "nodeId" },
+      { "varType": "nodeId" }
+     ]
+    },
+    "time": { "value": 208.0, "varType": "double" }
+   },
+   "nodeId": "visibilityCurve#8",
+   "nodeType": "visibilityCurve"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 192.0, "varType": "double" },
+    "uuid": { "value": "2fe96447-f861-4b9e-8067-c566c1656f37", "varType": "string" }
+   },
+   "nodeId": "keyframe#20",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "bd9affbb-c91a-4aec-8ba7-95deaa6ffa34", "varType": "string" }
+   },
+   "nodeId": "keyframe#21",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 192.0, "varType": "double" },
+    "uuid": { "value": "cd66542a-c249-4f75-9265-4464da879225", "varType": "string" }
+   },
+   "nodeId": "keyframe#22",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "6f0e19a0-5b0a-492e-84e1-69a6cef43a8b", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#11",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "419620ac-f5bb-454f-b737-754848747f82", "varType": "string" }
+   },
+   "nodeId": "keyframe#19",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "8bb1ea09-f8b5-440b-b344-3cbb326e8305", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#7",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "0b459553-0126-48f1-91c8-e4feb7ad6144", "varType": "string" }
+   },
+   "nodeId": "keyframe#18",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 14, "varType": "int" },
+    "fps": { "value": 25.0, "varType": "double" },
+    "inFps": { "value": 25.0, "varType": "double" },
+    "niceName": { "value": "Flyer Animado Voz Creativa Image Shader 1", "varType": "string" },
+    "resolution": {
+     "value": { "x": 1080, "y": 1920 },
+     "varType": "int2"
+    },
+    "time": { "value": 208.0, "varType": "double" },
+    "uuid": { "value": "1d6755d5-53f6-4f1a-bce1-908f78cb552e", "varType": "string" }
+   },
+   "nodeId": "imageShader#2",
+   "nodeType": "imageShader"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "116dbe28-ede1-4dd6-a49f-80cedf285436", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#8",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "8bb1ea09-f8b5-440b-b344-3cbb326e8305", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#9",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 14, "varType": "int" },
+    "fps": { "value": 25.0, "varType": "double" },
+    "inFps": { "value": 25.0, "varType": "double" },
+    "niceName": { "value": "Flyer Animado Voz Creativa Image Shader 2", "varType": "string" },
+    "resolution": {
+     "value": { "x": 1080, "y": 1920 },
+     "varType": "int2"
+    },
+    "time": { "value": 208.0, "varType": "double" },
+    "uuid": { "value": "1d6755d5-53f6-4f1a-bce1-908f78cb552e", "varType": "string" }
+   },
+   "nodeId": "imageShader#3",
+   "nodeType": "imageShader"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 6, "varType": "int" },
+    "colorShaders": {
+     "list": [ {} ]
+    },
+    "materialColor": {
+     "value": { "a": 0, "b": 100, "g": 100, "r": 100 },
+     "varType": "color"
+    },
+    "niceName": { "value": "Fill 2", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "78abe4a5-b173-46af-9fad-69c41a8d9f96", "varType": "string" }
+   },
+   "nodeId": "colorMaterial#3",
+   "nodeType": "colorMaterial"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 2, "varType": "int" },
+    "hierarchy": { "value": false, "varType": "bool" },
+    "niceName": { "value": "Flyer Animado Voz Creativa 2", "varType": "string" },
+    "on": { "value": false, "varType": "bool" },
+    "scale": {
+     "aspectRatio": 1.0,
+     "value": { "x": 1.5, "y": 1.5 },
+     "varType": "double2"
+    },
+    "uuid": { "value": "7700b32e-f7c2-49cc-9c7f-911012d525ce", "varType": "string" }
+   },
+   "hierarchyOffset": 370.0,
+   "nodeId": "footageShape#3",
+   "nodeType": "footageShape"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 6, "varType": "int" },
+    "gradient": {
+     "list": [
+      {
+       "compound": {
+        "color": {
+         "value": { "a": 255, "b": 0, "g": 0, "r": 0 },
+         "varType": "color"
+        }
+       }
+      },
+      {
+       "compound": {
+        "color": {
+         "value": { "a": 255, "b": 255, "g": 255, "r": 255 },
+         "varType": "color"
+        },
+        "position": { "value": 1.0, "varType": "double" }
+       }
+      }
+     ]
+    },
+    "niceName": { "value": "Stroke 1", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "b62ddeb0-dcf3-4f21-91de-82b91ebe8672", "varType": "string" }
+   },
+   "nodeId": "strokeMaterial#2",
+   "nodeType": "strokeMaterial"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "116dbe28-ede1-4dd6-a49f-80cedf285436", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#10",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 250.0, "varType": "double" },
+    "uuid": { "value": "3f2b1f7f-93ff-4c35-97f9-20c08ba4108b", "varType": "string" }
+   },
+   "nodeId": "keyframe#13",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 6, "varType": "int" },
+    "colorShaders": {
+     "list": [ {} ]
+    },
+    "materialColor": {
+     "value": { "a": 0, "b": 100, "g": 100, "r": 100 },
+     "varType": "color"
+    },
+    "niceName": { "value": "Fill 1", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "78abe4a5-b173-46af-9fad-69c41a8d9f96", "varType": "string" }
+   },
+   "nodeId": "colorMaterial#2",
+   "nodeType": "colorMaterial"
+  },
+  {
+   "attributes": {
+    "niceName": { "value": "subUINodes", "varType": "string" },
+    "uuid": { "value": "6f0e19a0-5b0a-492e-84e1-69a6cef43a8b", "varType": "string" }
+   },
+   "nodeId": "hiddenFolder#6",
+   "nodeType": "hiddenFolder"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "419620ac-f5bb-454f-b737-754848747f82", "varType": "string" }
+   },
+   "nodeId": "keyframe#14",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 192.0, "varType": "double" },
+    "uuid": { "value": "2fe96447-f861-4b9e-8067-c566c1656f37", "varType": "string" }
+   },
+   "nodeId": "keyframe#15",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": 1.0 },
+     "varType": "keyData"
+    },
+    "uuid": { "value": "bd9affbb-c91a-4aec-8ba7-95deaa6ffa34", "varType": "string" }
+   },
+   "nodeId": "keyframe#16",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "data": {
+     "value": { "numValue": -1.0 },
+     "varType": "keyData"
+    },
+    "timeOffset": { "value": 192.0, "varType": "double" },
+    "uuid": { "value": "cd66542a-c249-4f75-9265-4464da879225", "varType": "string" }
+   },
+   "nodeId": "keyframe#17",
+   "nodeType": "keyframe"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 6, "varType": "int" },
+    "gradient": {
+     "list": [
+      {
+       "compound": {
+        "color": {
+         "value": { "a": 255, "b": 0, "g": 0, "r": 0 },
+         "varType": "color"
+        }
+       }
+      },
+      {
+       "compound": {
+        "color": {
+         "value": { "a": 255, "b": 255, "g": 255, "r": 255 },
+         "varType": "color"
+        },
+        "position": { "value": 1.0, "varType": "double" }
+       }
+      }
+     ]
+    },
+    "niceName": { "value": "Stroke 2", "varType": "string" },
+    "showInProjectWindow": { "value": false, "varType": "bool" },
+    "uuid": { "value": "b62ddeb0-dcf3-4f21-91de-82b91ebe8672", "varType": "string" }
+   },
+   "nodeId": "strokeMaterial#3",
+   "nodeType": "strokeMaterial"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 9, "varType": "int" },
+    "niceName": { "value": "MP4", "varType": "string" },
+    "uuid": { "value": "87c3a6f0-12f3-4260-aa7a-c2b21066c5a9", "varType": "string" }
+   },
+   "nodeId": "renderMP4#1",
+   "nodeType": "renderMP4"
+  },
+  {
+   "attributes": {
+    "colorId": { "value": 2, "varType": "int" },
+    "hierarchy": { "value": false, "varType": "bool" },
+    "niceName": { "value": "Flyer Animado Voz Creativa 1", "varType": "string" },
+    "scale": {
+     "aspectRatio": 1.0,
+     "value": { "x": 1.5, "y": 1.5 },
+     "varType": "double2"
+    },
+    "uuid": { "value": "7700b32e-f7c2-49cc-9c7f-911012d525ce", "varType": "string" }
+   },
+   "hierarchyOffset": 185.0,
+   "nodeId": "footageShape#2",
+   "nodeType": "footageShape"
+  }
+ ],
+ "other": {
+  "viewport": { "backgroundMode": 0, "rulers": {} }
+ },
+ "referenceData": {},
+ "resourceType": "cavalry.scenefile",
+ "version": "1.0.62"
+}
